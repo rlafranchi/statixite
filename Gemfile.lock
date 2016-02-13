@@ -1,0 +1,397 @@
+PATH
+  remote: .
+  specs:
+    statixite (1.0.0)
+      bootstrap_form (~> 2.3)
+      carrierwave (~> 0.10)
+      dropzonejs-rails (~> 0.7)
+      fog (~> 1.37)
+      git (~> 1.2)
+      git_clone_url (~> 2.0)
+      haml-rails (~> 0.9)
+      htauth (~> 2.0)
+      jekyll (~> 3.0)
+      jekyll-archives (~> 2.1)
+      jekyll-contentblocks (~> 1.1)
+      jekyll-feed (~> 0.4)
+      jekyll-paginate (~> 1.1)
+      jekyll-sitemap (~> 0.9)
+      jquery-rails (~> 4.1)
+      kaminari (~> 0.16)
+      less-rails (~> 2.7)
+      mini_magick (~> 4.3)
+      pygments.rb (~> 0.6)
+      rails (~> 4.2)
+      rdiscount (~> 2.1)
+      redcarpet (~> 3.3)
+      therubyracer (~> 0.12)
+      uglifier (~> 2.7)
+      validates_hostname (~> 1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    CFPropertyList (2.3.2)
+    actionmailer (4.2.5)
+      actionpack (= 4.2.5)
+      actionview (= 4.2.5)
+      activejob (= 4.2.5)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+    actionpack (4.2.5)
+      actionview (= 4.2.5)
+      activesupport (= 4.2.5)
+      rack (~> 1.6)
+      rack-test (~> 0.6.2)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (4.2.5)
+      activesupport (= 4.2.5)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    activejob (4.2.5)
+      activesupport (= 4.2.5)
+      globalid (>= 0.3.0)
+    activemodel (4.2.5)
+      activesupport (= 4.2.5)
+      builder (~> 3.1)
+    activerecord (4.2.5)
+      activemodel (= 4.2.5)
+      activesupport (= 4.2.5)
+      arel (~> 6.0)
+    activesupport (4.2.5)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    addressable (2.3.8)
+    arel (6.0.3)
+    bootstrap_form (2.3.0)
+    builder (3.2.2)
+    byebug (8.2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    colorator (0.1)
+    commonjs (0.2.7)
+    concurrent-ruby (1.0.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    diff-lcs (1.2.5)
+    dropzonejs-rails (0.7.2)
+      rails (> 3.1)
+    erubis (2.7.0)
+    excon (0.45.4)
+    execjs (2.6.0)
+    fabrication (2.14.1)
+    faker (1.5.0)
+      i18n (~> 0.5)
+    ffi (1.9.10)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (1.37.0)
+      fog-aliyun (>= 0.1.0)
+      fog-atmos
+      fog-aws (>= 0.6.0)
+      fog-brightbox (~> 0.4)
+      fog-core (~> 1.32)
+      fog-dynect (~> 0.0.2)
+      fog-ecloud (~> 0.1)
+      fog-google (<= 0.1.0)
+      fog-json
+      fog-local
+      fog-powerdns (>= 0.1.1)
+      fog-profitbricks
+      fog-radosgw (>= 0.0.2)
+      fog-riakcs
+      fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
+      fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-vsphere (>= 0.4.0)
+      fog-xenserver
+      fog-xml (~> 0.1.1)
+      ipaddress (~> 0.5)
+    fog-aliyun (0.1.0)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      ipaddress (~> 0.8)
+      xml-simple (~> 1.1)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-aws (0.8.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-brightbox (0.10.1)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto (~> 0.0.2)
+    fog-core (1.35.0)
+      builder
+      excon (~> 0.45)
+      formatador (~> 0.2)
+    fog-dynect (0.0.2)
+      fog-core
+      fog-json
+      fog-xml
+    fog-ecloud (0.3.0)
+      fog-core
+      fog-xml
+    fog-google (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-local (0.2.1)
+      fog-core (~> 1.27)
+    fog-powerdns (0.1.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+    fog-profitbricks (0.0.5)
+      fog-core
+      fog-xml
+      nokogiri
+    fog-radosgw (0.0.5)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-riakcs (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-sakuracloud (1.7.5)
+      fog-core
+      fog-json
+    fog-serverlove (0.1.2)
+      fog-core
+      fog-json
+    fog-softlayer (1.0.3)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.1)
+      fog-core
+      fog-json
+    fog-terremark (0.1.0)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.1.0)
+      fission
+      fog-core
+    fog-voxel (0.1.0)
+      fog-core
+      fog-xml
+    fog-vsphere (0.6.0)
+      fog-core
+      rbvmomi (~> 1.8)
+    fog-xenserver (0.2.3)
+      fog-core
+      fog-xml
+    fog-xml (0.1.2)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
+    formatador (0.2.5)
+    git (1.2.9.1)
+    git_clone_url (2.0.0)
+      uri-ssh_git (>= 2.0)
+    globalid (0.3.6)
+      activesupport (>= 4.1.0)
+    haml (4.0.7)
+      tilt
+    haml-rails (0.9.0)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 4.0.6, < 5.0)
+      html2haml (>= 1.0.1)
+      railties (>= 4.0.1)
+    hashdiff (0.2.3)
+    htauth (2.0.0)
+    html2haml (2.0.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0.0)
+      nokogiri (~> 1.6.0)
+      ruby_parser (~> 3.5)
+    i18n (0.7.0)
+    inflecto (0.0.2)
+    ipaddress (0.8.2)
+    jekyll (3.0.2)
+      colorator (~> 0.1)
+      jekyll-sass-converter (~> 1.0)
+      jekyll-watch (~> 1.1)
+      kramdown (~> 1.3)
+      liquid (~> 3.0)
+      mercenary (~> 0.3.3)
+      rouge (~> 1.7)
+      safe_yaml (~> 1.0)
+    jekyll-archives (2.1.0)
+      jekyll (>= 2.4)
+    jekyll-contentblocks (1.1.0)
+      jekyll
+    jekyll-feed (0.4.0)
+    jekyll-paginate (1.1.0)
+    jekyll-sass-converter (1.4.0)
+      sass (~> 3.4)
+    jekyll-sitemap (0.9.0)
+    jekyll-watch (1.3.1)
+      listen (~> 3.0)
+    jquery-rails (4.1.0)
+      rails-dom-testing (~> 1.0)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kramdown (1.9.0)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.7.1)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
+    libv8 (3.16.14.13)
+    liquid (3.0.6)
+    listen (3.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mercenary (0.3.5)
+    mime-types (2.99)
+    mini_magick (4.3.6)
+    mini_portile2 (2.0.0)
+    minitest (5.8.4)
+    multi_json (1.11.2)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.4)
+    posix-spawn (0.3.11)
+    pygments.rb (0.6.3)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.2.0)
+    rack (1.6.4)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rails (4.2.5)
+      actionmailer (= 4.2.5)
+      actionpack (= 4.2.5)
+      actionview (= 4.2.5)
+      activejob (= 4.2.5)
+      activemodel (= 4.2.5)
+      activerecord (= 4.2.5)
+      activesupport (= 4.2.5)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.2.5)
+      sprockets-rails
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.7)
+      activesupport (>= 4.2.0.beta, < 5.0)
+      nokogiri (~> 1.6.0)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-html-sanitizer (1.0.2)
+      loofah (~> 2.0)
+    railties (4.2.5)
+      actionpack (= 4.2.5)
+      activesupport (= 4.2.5)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rake (10.5.0)
+    rb-fsevent (0.9.7)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    rbvmomi (1.8.2)
+      builder
+      nokogiri (>= 1.4.1)
+      trollop
+    rdiscount (2.1.8)
+    redcarpet (3.3.4)
+    ref (2.0.0)
+    rouge (1.10.1)
+    rspec-core (3.4.1)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.0)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    ruby_parser (3.7.3)
+      sexp_processor (~> 4.1)
+    safe_yaml (1.0.4)
+    sass (3.4.21)
+    sexp_processor (4.6.1)
+    shoulda-matchers (3.0.1)
+      activesupport (>= 4.0.0)
+    sprockets (3.5.2)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.0.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    tilt (2.0.2)
+    trollop (2.1.2)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    uri-ssh_git (2.0.0)
+    validates_hostname (1.0.5)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+    vcr (3.0.0)
+    webmock (1.22.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
+    xml-simple (1.1.5)
+    yajl-ruby (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  byebug
+  fabrication
+  faker
+  pg
+  rspec-rails (~> 3.4.0)
+  shoulda-matchers
+  statixite!
+  vcr
+  webmock
+
+BUNDLED WITH
+   1.10.6

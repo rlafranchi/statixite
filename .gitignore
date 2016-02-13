@@ -1,0 +1,17 @@
+.bundle/
+log/*.log
+pkg/
+spec/test_app/db/*.sqlite3
+spec/test_app/db/*.sqlite3-journal
+spec/test_app/log/*.log
+spec/test_app/tmp/
+spec/test_app/.byebug_history
+spec/test_app/sites/
+spec/test_app/uploads/
+spec/test_app/public/system
+spec/test_app/public/statixite/previews
+spec/test_app/config/initializers/statixite.rb
+spec/test_app/.sass-cache
+spec/cassettes
+.byebug_history
+*.gem

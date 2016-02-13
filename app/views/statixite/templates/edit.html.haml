@@ -1,0 +1,93 @@
+- content_for :inline_javascript do
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-javascript.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-yaml.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-html.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-markdown.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-liquid.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-css.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-scss.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-sass.js"
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-less.js"
+  :javascript
+    var codeEditor = ace.edit("codeEditor");
+    codeEditor.setShowPrintMargin(false);
+
+%h1 Template Editor
+%hr
+/ item template
+%script#file-template{:type => "text/x-template"}
+  %li.item
+    %div{"v-class" => "bold: isFolder" }
+      %span{"v-if" => "isFolder && open && !renaming", "v-on" => "click: toggle"}
+        %i.glyphicon.glyphicon-minus
+      %span{"v-if" => "isFolder && !open && !renaming", "v-on" => "click: toggle"}
+        %i.glyphicon.glyphicon-plus
+      %span{"v-if" => "treedata.name == '_config.yml'", class: "disabled"}
+        = link_to settings_site_path(@site) do
+          {{treedata.name}}
+      %span{"v-if" => "!renaming && treedata.name != '_config.yml'", "v-on" => "click: renameFile()"}
+        {{treedata.name}}
+      %span{"v-if" => "renaming"}
+        %form.form-inline{ "v-on" => "submit: saveName($event)"}
+          .form-group
+            .input-group
+              %input.form-control.input-xs{ type: 'text', 'v-model': 'treedata.name'  }
+              .input-group-addon{"v-on": "click: saveName($event)"}
+                %i.glyphicon.glyphicon-ok
+      %span{"v-if" => "!isFolder && editable && !renaming && treedata.name != '_config.yml'"}
+        %i.glyphicon.glyphicon-pencil{"v-on" => "click: editFile()", class: 'text-success'}
+      %span{"v-if" => "isPostsFolder && !renaming"}
+        = link_to site_posts_path(@site), class: 'text-warning', data: { toggle: "tooltip", placement: "top" }, title: 'Posts can be edited here or through the markdown editor'  do
+          %i.glyphicon.glyphicon-exclamation-sign
+      %span{"v-if" => "treedata.name == '_config.yml'"}
+        = link_to settings_site_path(@site), class: 'text-warning', data: { toggle: "tooltip", placement: "top" }, title: 'Configuration file settings are managed under the settings page'  do
+          %i.glyphicon.glyphicon-exclamation-sign
+      %span{"v-if" => "treedata.name == '404error.html'"}
+        = link_to "#", class: 'text-warning', data: { toggle: "tooltip", placement: "top" }, title: 'Use this file to customize your 404 error page.' do
+          %i.glyphicon.glyphicon-exclamation-sign
+      %span{"v-if" => "!isPostsFolder && !renaming && !treedata.root && treedata.name != '_config.yml'"}
+        %a.text-danger{"data-confirm" => "Warning! If you are deleting a folder, then all children will be deleted as well.  Are you sure you want to delete {{treedata.path}}?", "data-method" => "delete", "v-attr" => "href: '/sites/#{@site.id}/template_delete?template[path]=' + treedata.path", :rel => "nofollow"}
+          %i.glyphicon.glyphicon-remove
+    %ul{"v-if" => "isFolder", "v-show" => "open"}
+      :plain
+        <file-template v-repeat="treedata: treedata.children"></file-template>
+      %li
+        %span.new-file{ "v-on": "click: addFile"}
+          %i.glyphicon.glyphicon-file
+        %span.new-folder{ "v-on": "click: addFolder"}
+          %i.glyphicon.glyphicon-folder-close
+        %span.upload{ "v-on": "click: openUploadModal"}
+          %i.glyphicon.glyphicon-open
+/ the demo root element
+#templateTree
+  %ul.parent
+    :plain
+      <file-template treedata="{{@ treeData}}"></file-template>
+  .editor-modal.modal.fade{"aria-labelledby" => "modalLabel", :role => "dialog"}
+    .modal-dialog.modal-lg{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", :type => "button", "v-on" => "click: dismissFileChanges()"}
+            %span{"aria-hidden" => "true"} &times;
+          %h4#modalLabel.modal-title {{currentFile.name}}
+        .modal-body
+          #codeEditor
+        .modal-footer
+          %button.btn.btn-default{:type => "button", "v-on" => "click: dismissFileChanges()"} Discard changes
+          %button.btn.btn-primary{:type => "button", "v-on" => "click: saveFileChanges()"} Save changes
+  = form_tag url_for(:action => 'upload_files', :controller => 'templates'), method: 'POST', multipart: true do
+    .upload-modal.modal.fade{"aria-labelledby" => "uploadModalLabel", :role => "dialog"}
+      .modal-dialog.modal-sm{:role => "document"}
+        .modal-content
+          .modal-header
+            %button.close{"aria-label" => "Close", :type => "button", data: { dismiss: 'modal' }, "v-on" => "click: currentFile = null" }
+              %span{"aria-hidden" => "true"} &times;
+            %h4#uploadModalLabel.modal-title Upload Files or Folders
+          .modal-body{ style: 'padding: 15px;'}
+            = file_field_tag 'files[]', :type => 'file', :multiple => true
+            = hidden_field_tag 'template[path]', '{{currentFile.path}}'
+            = hidden_field_tag 'template[root]', '{{currentFile.root}}'
+          .modal-footer
+            %button.btn.btn-default{:type => "button", data: { dismiss: 'modal' }, "v-on" => "click: currentFile = null" } Dismiss
+            = submit_tag 'Upload', class: 'btn btn-primary'

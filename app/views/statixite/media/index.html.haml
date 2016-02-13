@@ -1,0 +1,39 @@
+- content_for :inline_javascript do
+  = javascript_include_tag "dropzone"
+  :javascript
+    $(document).ready(function() {
+      Dropzone.autoDiscover = false;
+      var mediaDropzone;
+      mediaDropzone = new Dropzone("#media-dropzone", {
+        addRemoveLinks: false
+      });
+      return mediaDropzone.on("success", function(file, responseText) {
+        this.removeFile(file);
+        $.getScript("/statixite/sites/#{@site.id}/media")
+      });
+    });
+/ Image
+- content_for :stylesheets do
+  = stylesheet_link_tag "dropzone/dropzone"
+%h1 Manage Media
+%hr
+.row
+  .col-sm-12
+    .pull-right
+      %button.btn.btn-default{"aria-label" => "Picture", :type => "button", "data-toggle": "modal", "data-target": "#imageModal"}
+        New Media
+%br
+.index
+  = render "index"
+/ Image
+#imageModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "imageLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#imageLabel.modal-title Drag &amp; Drop Image(s)
+      .modal-body
+        = form_tag site_media_path(@site, @media), class: 'dropzone', id: 'media-dropzone', :multipart => true do
+          .fallback
+            = file_field_tag 'media[file]', multiple: true

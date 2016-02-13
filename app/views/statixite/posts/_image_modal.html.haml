@@ -1,0 +1,21 @@
+- content_for :inline_javascript do
+  = javascript_include_tag "dropzone"
+/ Image
+#imageModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "imageLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#imageLabel.modal-title Drag &amp; Drop Image(s)
+      .modal-body
+        = form_tag site_media_path(@site, @media), class: 'dropzone', id: 'media-dropzone', :multipart => true do
+          .fallback
+            = file_field_tag 'media[file]', multiple: true
+        %h4 Or select from existing Media
+        .row
+          .col-md-2.col-sm-2.col-xs-3{ "v-repeat": "media in photos"}
+            %a{:href => "#", :title => 'Click to Insert', 'v-on': "click: insertMedia($event, media)" }
+              %img.img-responsive{:alt => "", "v-attr": "src: '/statixite' + media.file.thumb.url" }
+        .text-center.media-paginate
+          = paginate @media_index, :remote => true, :params => { :controller => 'media', :action => 'index', :site_id => @site.id}

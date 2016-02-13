@@ -1,0 +1,20 @@
+%ul.nav.nav-sidebar
+  %li{class: current_class?(sites_path)}
+    = link_to(sites_path) do
+      Sites
+      - if current_page?(sites_path)
+        %span.sr-only (current)
+  %li{class: current_class?(new_site_path)}
+    = link_to(new_site_path) do
+      New Site
+      %i.glyphicon.glyphicon-plus
+      - if current_page?(new_site_path)
+        %span.sr-only (current)
+  - if @site.present?  && !current_page?(new_site_path(@site)) && !@site.new_record?
+    %li{class: current_parent_class?(@site)}
+      = link_to(settings_site_path(@site)) do
+        = @site.statixite_name
+        - if current_page?(settings_site_path(@site))
+          %span.sr-only (current)
+    %ul.nav.nav-sidebar
+      = render 'layouts/statixite/site_sub_items'

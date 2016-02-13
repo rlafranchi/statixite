@@ -1,0 +1,26 @@
+%h3 Pick a Template
+%hr
+.row
+  - @templates.each do |template|
+    .col-sm-3
+      .panel.panel-default
+        .panel-body
+          - if template['title'] == 'Jekyll Default'
+            = image_tag('statixite/jekyll.png', class: 'img-responsive')
+          - else
+            = image_tag("https://raw.githubusercontent.com/mattvh/jekyllthemes/master/thumbnails/#{template['thumbnail']}", class: 'img-responsive')
+          .caption
+            %h3= template['title']
+        %table.table{:style => "padding: 0; margin: 0;"}
+          %tbody
+            %tr
+              - author_link_array = template['homepage'].split("/")
+              - author_link_array.pop
+              %td Author 
+              %td= link_to template['author'], author_link_array.join("/") 
+            %tr
+              %td Demo
+              %td= link_to "<i class='glyphicon glyphicon-new-window'></i>".html_safe, template['demo'], target: '_blank'
+            %tr
+              %td Select
+              %td= radio_button_tag 'site[template]', template['title'], label: "Select"

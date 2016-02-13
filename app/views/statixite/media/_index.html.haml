@@ -1,0 +1,13 @@
+.row
+  - @media_index.each do |media|
+    .col-md-2.col-sm-3.col-xs-6
+      .media
+        .media-left
+          %a{:href => "/statixite#{media.file.url}", :target => '_blank', :data => { :toggle => 'tooltip', :placement => 'top' }, :title => 'Click to View Full Image' }
+            %img.media-object{:alt => "", :src => "/statixite#{media.file.thumb.url}"}
+        .media-body
+          = link_to site_medium_path(@site, media), :data => { method: 'delete', confirm: 'Are You Sure?' } do
+            %i.text-danger.glyphicon.glyphicon-remove
+      %br
+.text-center
+  = paginate @media_index, :remote => true

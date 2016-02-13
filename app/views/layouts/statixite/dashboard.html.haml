@@ -1,0 +1,27 @@
+!!! 5
+%html(lang="en")
+  %head
+    = render 'layouts/statixite/head'
+  %body
+    #ajaxLoader{ style: 'display: none;'}
+      .loader
+    = render 'layouts/statixite/header'
+    .container-fluid#md-editor
+      .row
+        .col-sm-3.col-md-2.sidebar
+          = render 'layouts/statixite/dash_nav'
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          = yield
+    = yield :pre_javascript
+    = javascript_include_tag "statixite/application"
+    = javascript_include_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("controllers/#{params[:controller]}_#{params[:action]}.js")
+    = render 'layouts/statixite/flash'
+    = yield :inline_javascript
+    :javascript
+      $(document).ready(function() {
+        $.notify('Beta Alert! Use at your own risk.', {
+          autoHide: false,
+          position: 'bottom right',
+          className: 'warn'
+        });
+      });

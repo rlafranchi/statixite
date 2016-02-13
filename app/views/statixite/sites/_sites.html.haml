@@ -1,0 +1,27 @@
+%table.table
+  %caption Your Sites
+  %thead
+    %tr
+      %th Site Name 
+      %th= link_to 'New Site <i class="glyphicon glyphicon-plus"></i>'.html_safe, new_site_path, class: 'btn btn-primary'
+  %tbody
+    - @sites.each do |site|
+      %tr
+        %th{:scope => "row"}= site.site_name
+        %td
+          = link_to(build_and_preview_site_path(site), class: 'btn btn-default') do
+            %span.glyphicon.glyphicon-eye-open{"aria-hidden" => "true"}
+            Preview Site
+          &nbsp;
+          = link_to(settings_site_path(site), class: 'btn btn-default') do
+            %span.glyphicon.glyphicon-cog{"aria-hidden" => "true"}
+            Settings
+          &nbsp;
+          = link_to(site_deployments_path(site), class: 'btn btn-default') do
+            %span.glyphicon.glyphicon-open{"aria-hidden" => "true"}
+            Deploy
+          &nbsp;
+          = link_to site_path(site), :method => 'delete', data: { :confirm => 'Are you sure? This will remove all files and deactivate and hosting services used for this site!' }, class: 'btn btn-danger' do
+            %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
+            Delete
+= paginate @sites, :remote => true

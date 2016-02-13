@@ -1,0 +1,45 @@
+- content_for :inline_javascript do
+  :javascript
+    $(document).ready(function() {
+      var $selected = $('#site_build_option').find('[selected]');
+      var selectedVal = $selected[0].value;
+      $('#buildFrom-' + selectedVal ).show();
+      $('#site_build_option').on('change', function() {
+        $('.selection').hide();
+        $('#buildFrom-' + this.value ).show();
+      });
+    });
+%h1 Create Site
+%hr
+= bootstrap_form_for @site, layout: :horizontal do |f|
+  %hr
+  .form-group
+    .col-sm-8
+      = f.text_field :site_name, label: 'Site Name', placeholder: 'numbers-dashes-letters', label_col: "col-sm-4", control_col: "col-sm-8"
+  .form-group
+    .col-sm-8
+      - build_options = [['Pick a Jekyll Template', 'template'], ['Enter a public url for a git repository', 'custom'], ['Start from scratch', 'scratch']]
+      = f.select :build_option, options_for_select(build_options, @site.build_option || 'template'), class: 'form-control', label_col: "col-sm-4", control_col: "col-sm-8"
+  .form-group.selection#buildFrom-scratch{ style: 'display: none;'}
+    %h3 Start from scratch with a barebones template
+    %hr
+  .selection#buildFrom-custom{ style: 'display: none;' }
+    .form-group
+      %h3 Custom Git Repository
+      %hr
+      .col-sm-8
+        .form-group
+          = f.text_field :template_repo, placeholder: 'https://github.com/username/example.git', label: 'Git Repository', label_col: "col-sm-4", control_col: "col-sm-8", "v-model": "repo"
+      .col-sm-4
+        = link_to "Find Repo", "#", :class => 'btn btn-primary', "v-on": "click: findBranches($event)"
+    .form-group{ "v-if": "branches.length != 0"}
+      .col-sm-8
+        .form-group
+          %label.control-label.col-sm-4{ for: "repoBranch" } Branch
+          .col-sm-8
+            %select.form-control{ name: "repo_branch", id: "repoBranch"}
+              %option{ "v-repeat": "branch in branches", value: "{{branch}}"} {{branch}}
+  .form-group.selection#buildFrom-template{ style: 'display: none;' }
+    = render "templates"
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'

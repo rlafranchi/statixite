@@ -1,0 +1,77 @@
+- content_for :inline_javascript do
+  = javascript_include_tag "jsoneditor/dist/jsoneditor-minimalist.min"
+  :javascript
+    var container = document.getElementById("jsoneditor");
+    var editor = new JSONEditor(container);
+    //var json_settings = {};
+    //editor.set(json);
+    $(document).ready(function() {
+      $.ajax({
+        url: window.location.href,
+        data: {
+          format: 'json'
+        },
+        success: function(response) {
+          editor.set(response);
+        }
+      });
+      // get json
+      $('#savesettings').on('submit', function(e) {
+        e.preventDefault();
+        var $form = $(this);
+        $.ajax({
+          type: 'PUT',
+          dataType: 'json',
+          contentType: 'application/json',
+          url: $form.attr('action'),
+          data: JSON.stringify(getFormValues($form)),
+          success: function(response) {
+            $('.glyphicon-ok').removeClass('hidden');
+            $('.glyphicon-ok').show();
+            $('.glyphicon-ok').fadeOut();
+            $.notify('Settings Saved', 'success')
+          },
+          error: function(xhr, status, error) {
+            $('.glyphicon-exclamation-sign').show();
+            $('.glyphicon-exclamation-sign').fadeOut();
+            if ( xhr.responseJSON.errors.domain_name ) {
+              $.notify('Domain name ' + xhr.responseJSON.errors.domain_name[0], 'error');
+            } else {
+              $.notify('Something went wrong', 'error')
+            }
+          }
+        });
+      });
+    });
+    var getFormValues = function($form){
+      var values = {};
+      var valuesArray = $form.serializeArray();
+      for(var i = 0, max = valuesArray.length; i < max; i++){
+        var value = valuesArray[i];
+        values[value.name] = value.value
+      };
+      return {
+        site: {
+          domain_name: values['site[domain_name]'],
+          settings: editor.get()
+        }
+      }
+    };
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "jsoneditor/dist/jsoneditor"
+%h1 Settings for #{@site.statixite_name}
+%hr
+%p The settings found here are equivalent to the settings found in a <kbd>_config.yml</kbd> file for a typical Jekyll Site.  To use a custom domain, enter it here.  Once you deploy your site for the first time, a hostname will be created.  Use this hostname for create a cname for your domain.  If you would like to use a naked domain, then you may use <a href="https://dnsimple.com" target="_blank">DNSimple</a>, or use a naked domain redirect service provided by <a href="http://wwwizer.com/" target="_blank">wwwizer.com</a>. 
+
+#jsoneditor
+%br
+= bootstrap_form_for @site, layout: :horizontal, html: {id: 'savesettings'} do |f|
+  .form-group
+    .col-sm-8
+      = f.text_field :domain_name, label: 'Domain Name', placeholder: 'example.com', label_col: "col-sm-4", control_col: "col-sm-8"
+    .col-sm-8
+      = f.text_field :hostname, label: 'Host Name', label_col: "col-sm-4", control_col: "col-sm-8", placeholder: 'Hostname is created on the first deployment', disabled: ''
+  = f.submit 'Save Settings', class: 'btn btn-primary'
+  %i.glyphicon.glyphicon-ok.hidden
+  %i.glyphicon.glyphicon-exclamation-sign.hidden

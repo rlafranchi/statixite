@@ -1,0 +1,734 @@
+---
+- layout: post
+  title: Jekyll Default
+  date: 2013-05-31 19:42:00.000000000 -06:00
+  homepage: https://github.com/jekyll/jekyll
+  download: https://github.com/jekyll/jekyll
+  demo: http://demo.statixite.com
+  author: Jekyll
+  thumbnail: jekyll.png
+  license: MIT License
+  license_link: https://github.com/jekyll/jekyll/blob/master/LICENSE
+  whitelisted: true
+- layout: post
+  title: Jasper
+  date: 2013-05-31 19:42:00.000000000 -06:00
+  homepage: https://github.com/biomadeira/jasper
+  download: https://github.com/biomadeira/jasper
+  demo: https://biomadeira.github.io/jasper/ 
+  author: Fábio Madeira 
+  thumbnail: https://raw.githubusercontent.com/biomadeira/jasper/master/assets/images/jasper_screen1.png
+  license: MIT License
+  license_link: https://github.com/biomadeira/jasper/blob/master/LICENSE.txt
+  whitelisted: true
+- layout: post
+  title: Scribble 
+  date: 2013-05-31 19:42:00.000000000 -06:00
+  homepage: https://github.com/muan/scribble
+  download: https://api.github.com/repos/statixite/scribble/zipball
+  demo: http://scribble.muan.co/2013/05/06/scribble-the-jekyll-theme/
+  author: Mu-An Chiou
+  thumbnail: scribble.png
+  license: MIT License
+  license_link: https://github.com/muan/scribble/blob/master/LICENCE
+  whitelisted: true
+- layout: post
+  title: Solar
+  date: 2013-06-04 19:42:00.000000000 -06:00
+  homepage: https://github.com/mattvh/solar-theme-jekyll
+  download: https://api.github.com/repos/statixite/solar-theme-jekyll/zipball
+  demo: http://mattvh.github.io/solar-theme-jekyll/
+  author: Matt Harzewski
+  thumbnail: solar.png
+  license: GPL v2 or higher
+  license_link: https://github.com/mattvh/solar-theme-jekyll#license
+  whitelisted: true
+- layout: post
+  title: Left
+  date: 2013-06-14 19:31:00.000000000 -06:00
+  homepage: https://github.com/holman/left
+  download: https://api.github.com/repos/statixite/left/zipball
+  author: Zach Holman
+  thumbnail: left.png
+  license: MIT License
+  license_link: https://github.com/holman/left/blob/master/LICENSE
+- layout: post
+  title: So Simple
+  date: 2013-07-13 17:42:00.000000000 -06:00
+  homepage: https://github.com/mmistakes/so-simple-theme
+  download: https://api.github.com/repos/statixite/so-simple-theme/zipball
+  demo: http://mmistakes.github.io/so-simple-theme/
+  author: Michael Rose
+  thumbnail: so-simple.png
+  license: GPL v2
+  license_link: https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+- layout: post
+  title: Minimal Mistakes
+  date: 2013-07-19 04:05:00.000000000 -06:00
+  homepage: https://github.com/mmistakes/minimal-mistakes
+  download: https://api.github.com/repos/statixite/minimal-mistakes/zipball
+  demo: http://mmistakes.github.io/minimal-mistakes/
+  author: Michael Rose
+  thumbnail: minimal-mistakes.png
+  license: MIT License
+  license_link: https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+- layout: post
+  title: Lagom
+  date: 2013-08-23 06:00:00.000000000 -06:00
+  homepage: https://github.com/swanson/lagom
+  download: https://api.github.com/repos/statixite/lagom/zipball
+  author: Matt Swanson
+  thumbnail: lagom.png
+  license: MIT License
+  license_link: https://github.com/swanson/lagom/blob/master/LICENSE
+  whitelisted: true
+- layout: post
+  title: HPSTR
+  date: 2013-08-24 12:18:00.000000000 -06:00
+  homepage: https://github.com/mmistakes/hpstr-jekyll-theme
+  download: https://api.github.com/repos/statixite/hpstr-jekyll-theme/zipball
+  demo: http://mmistakes.github.io/hpstr-jekyll-theme/
+  author: Michael Rose
+  thumbnail: hpstr.png
+  license: GPL v2
+  license_link: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/LICENSE
+  whitelisted: true
+- layout: post
+  title: Dbyll
+  date: 2013-11-15 04:53:00.000000000 -07:00
+  homepage: https://github.com/dbtek/dbyll
+  download: https://api.github.com/repos/statixite/dbyll/zipball
+  demo: http://dbtek.github.io/dbyll/
+  author: Ismail Demirbilek
+  thumbnail: dbyll.png
+  license: MIT
+  license_link: https://github.com/dbtek/dbyll/blob/master/LICENSE
+  whitelisted: true
+- layout: post
+  title: Exemplar
+  date: 2013-11-28 03:20:00.000000000 -07:00
+  homepage: https://github.com/tybenz/exemplar
+  download: https://api.github.com/repos/statixite/exemplar/zipball
+  demo: http://exemplar.tybenz.com
+  author: Tyler Benziger
+  thumbnail: exemplar.png
+  license: MIT License
+  license_link: https://github.com/tybenz/exemplar/blob/master/LICENSE.txt
+- layout: post
+  title: Kasper
+  date: 2013-11-28 03:20:00.000000000 -07:00
+  homepage: https://github.com/rosario/kasper
+  download: https://api.github.com/repos/statixite/kasper/zipball
+  demo: http://rosario.io/2013/11/10/kasper-theme-for-jekyll.html
+  author: Rosario Rascuna
+  thumbnail: kasper.png
+  license: MIT License
+  license_link: https://github.com/rosario/kasper/blob/master/LICENSE.txt
+- layout: post
+  title: Flex
+  date: 2013-12-09 07:52:00.000000000 -07:00
+  homepage: https://github.com/the-development/flex
+  download: https://api.github.com/repos/statixite/flex/zipball
+  demo: http://the-development.github.io/flex
+  author: Jeff Martin
+  thumbnail: flex.png
+  license: MIT License
+  license_link: https://github.com/the-development/flex/blob/master/LICENSE
+- layout: post
+  title: Herring Cove
+  date: 2014-01-02 03:40:30.000000000 -07:00
+  homepage: https://github.com/arnp/herring-cove
+  download: https://api.github.com/repos/statixite/herring-cove/zipball
+  demo: http://arnp.github.io/herring-cove/
+  author: arnp
+  thumbnail: herring-cove.jpg
+  license: MIT
+  license_link: http://opensource.org/licenses/MIT
+- layout: post
+  title: hushaw
+  date: 2014-01-22 18:42:00.000000000 -07:00
+  homepage: https://github.com/hushaw/hushaw.github.com
+  download: https://api.github.com/repos/statixite/hushaw.github.com/zipball
+  demo: http://hushaw.github.io
+  author: signifox
+  thumbnail: hushaw.png
+  license: MIT License
+  license_link: https://github.com/hushaw/hushaw.github.com/blob/master/LICENCE
+- layout: post
+  title: redcup
+  date: 2014-01-23
+  homepage: https://github.com/nadjetey/redcup
+  download: https://api.github.com/repos/statixite/redcup/zipball
+  demo: http://nadjetey.github.io/redcup/
+  author: Nii Adjetey Sowah
+  thumbnail: redcup.png
+  license: Creative Commons License
+  license_link: http://creativecommons.org/licenses/by/3.0/deed.en_US
+  whitelisted: true
+- layout: post
+  title: Thinny
+  date: 2014-01-25 11:50:00.000000000 -07:00
+  homepage: https://github.com/camporez/Thinny
+  download: https://api.github.com/repos/statixite/Thinny/zipball
+  demo: http://camporez.com/
+  author: Ian Camporez Brunelli
+  thumbnail: thinny.png
+  license: MIT License
+  license_link: https://raw.github.com/camporez/Thinny/master/LICENSE
+  whitelisted: false
+- layout: post
+  title: Hikari
+  date: 2014-02-05 05:42:00.000000000 -07:00
+  homepage: https://github.com/mx3m/hikari-for-Jekyll
+  download: https://api.github.com/repos/statixite/hikari-for-Jekyll/zipball
+  demo: http://mx3m.github.io/hikari-for-Jekyll/
+  author: Mathieu Mayer-Mazzoli
+  thumbnail: hikari.png
+  license: MIT
+  license_link: http://opensource.org/licenses/MIT
+  whitelisted: true
+- layout: post
+  title: brume
+  date: 2014-02-08 12:17:00.000000000 -07:00
+  homepage: https://github.com/aigarsdz/brume
+  download: https://api.github.com/repos/statixite/brume/zipball
+  demo: http://aigarsdz.github.io/brume
+  author: Aigars Dzerviniks
+  thumbnail: brume.png
+  license: MIT License
+  license_link: https://github.com/aigarsdz/brume/blob/master/LICENSE.md
+  whitelisted: true
+- layout: post
+  title: Wangana
+  date: 2014-02-20
+  homepage: https://github.com/nadjetey/wangana
+  download: https://api.github.com/repos/statixite/wangana/zipball
+  demo: http://nadjetey.github.io/
+  author: Nii Adjetey Sowah
+  thumbnail: wangana.png
+  license: The MIT License (MIT)
+  license_link: https://github.com/nadjetey/wangana/blob/master/LICENSE
+- layout: post
+  title: Gereksiz
+  date: 2014-03-31
+  homepage: https://github.com/berkoz/gereksiz
+  download: https://api.github.com/repos/statixite/gereksiz/zipball
+  demo: http://bugsofberk.net
+  author: Berk Özbalcı
+  thumbnail: gereksiz.png
+  license: The BSD 2-Clause License
+  license_link: https://github.com/berkoz/gereksiz/blob/master/LICENSE
+  whitelisted: true
+- layout: post
+  title: architect
+  date: 2014-04-07 02:31:00.000000000 -06:00
+  homepage: https://github.com/jasonlong/architect-theme
+  download: https://api.github.com/repos/statixite/architect-theme/zipball
+  author: Jason Long
+  thumbnail: architect.png
+  license: Creative Commons Attribution 3.0 License
+  license_link: https://github.com/jasonlong/architect-theme/blob/master/README.md
+- layout: post
+  title: Simpleyyt
+  date: 2014-04-09
+  homepage: https://github.com/Simpleyyt/simpleyyt.github.io
+  download: https://api.github.com/repos/statixite/simpleyyt.github.io/zipball
+  demo: http://simpleyyt.github.io/
+  author: Yitao Yao
+  thumbnail: simpleyyt.png
+  license: MIT
+  license_link: http://opensource.org/licenses/MIT
+- layout: post
+  title: Noita
+  homepage: https://github.com/penibelst/jekyll-noita
+  download: https://api.github.com/repos/statixite/jekyll-noita/zipball
+  demo: http://noita.penibelst.de/
+  author: Anatol Broder
+  thumbnail: noita.png
+  license: MIT License
+  license_link: https://github.com/penibelst/jekyll-noita/blob/gh-pages/LICENSE
+- layout: post
+  title: block-log
+  homepage: https://github.com/anandubajith/block-log
+  download: https://api.github.com/repos/statixite/block-log/zipball
+  demo: http://anandu.info/block-log
+  author: Anandu B Ajith
+  thumbnail: block-log.png
+  license: MIT License
+  license_link: https://github.com/anandubajith/block-log/blob/master/LICENSE
+- layout: post
+  title: GridGallery
+  date: 2014-06-21
+  homepage: https://github.com/nadjetey/GridGallery
+  download: https://api.github.com/repos/statixite/GridGallery/zipball
+  demo: https://nadjetey.github.io/GridGallery
+  author: Nii Adjetey Sowah
+  thumbnail: gridgallery.png
+  license: WTFPL
+  license_link: http://www.wtfpl.net/txt/copying/
+- layout: post
+  title: White Paper
+  homepage: https://github.com/vinitkumar/white-paper
+  download: https://api.github.com/repos/statixite/white-paper/zipball
+  demo: http://vinitkumar.me/white-paper/
+  author: Vinit Kumar
+  thumbnail: white-paper.png
+  license: MIT License
+  license_link: https://github.com/vinitkumar/white-paper/raw/master/LICENSE
+- layout: post
+  title: Freelancer
+  date: 2014-07-24
+  homepage: https://github.com/jeromelachaud/freelancer-theme
+  download: https://api.github.com/repos/statixite/freelancer-theme/zipball
+  demo: https://jeromelachaud.github.io/freelancer-theme
+  author: Jerome Lachaud
+  thumbnail: freelancer.png
+  license: Apache 2.0
+  license_link: http://www.apache.org/licenses/LICENSE-2.0.html
+- layout: post
+  title: Midnight
+  date: 2014-07-26 19:42:00.000000000 -06:00
+  homepage: https://github.com/mattgraham/midnight
+  download: https://api.github.com/repos/statixite/midnight/zipball
+  demo: http://madebygraham.com/midnight/
+  author: Matt Graham
+  thumbnail: midnight.png
+  license: MIT License
+  license_link: https://github.com/mattgraham/midnight/blob/master/LICENCE
+- layout: post
+  title: Jekyll Metro
+  date: 2014-07-29
+  homepage: https://github.com/olakara/JekyllMetro
+  download: https://api.github.com/repos/statixite/JekyllMetro/zipball
+  demo: http://abdelraoof.com
+  author: Abdel Raoof Olakara
+  thumbnail: jekyllmetro.png
+  license: MIT
+  license_link: http://opensource.org/licenses/MIT
+- layout: post
+  title: Pixyll
+  date: 2014-07-31 21:33:00.000000000 -06:00
+  homepage: https://github.com/johnotander/pixyll
+  download: https://api.github.com/repos/statixite/pixyll/zipball
+  demo: http://pixyll.com
+  author: John Otander
+  thumbnail: pixyll.png
+  license: MIT License
+  license_link: https://github.com/johnotander/pixyll/blob/master/LICENSE.txt
+- layout: post
+  title: Travelog
+  date: 2014-08-11 18:00:00.000000000 -06:00
+  homepage: https://github.com/rowanoulton/travelog-theme
+  download: https://api.github.com/repos/statixite/travelog-theme/zipball
+  author: Rowan Oulton
+  thumbnail: travelog.png
+  license: MIT License
+  license_link: https://github.com/rowanoulton/travelog-theme/blob/master/LICENSE
+- layout: post
+  title: Agency
+  date: 2014-08-15
+  homepage: https://github.com/y7kim/agency-jekyll-theme
+  download: https://api.github.com/repos/statixite/agency-jekyll-theme/zipball
+  demo: https://y7kim.github.io/agency-jekyll-theme
+  author: Rick Kim
+  thumbnail: agency.jpg
+  license: Apache 2.0
+  license_link: http://www.apache.org/licenses/LICENSE-2.0.html
+- layout: post
+  title: Solid
+  date: 2014-08-17 06:00:00.000000000 -06:00
+  homepage: https://github.com/st4ple/solid-jekyll
+  download: https://api.github.com/repos/statixite/solid-jekyll/zipball
+  demo: http://st4ple.github.io/solid-jekyll/
+  author: Oliver Stapleton
+  thumbnail: solid.png
+  license: Apache 2.0
+  license_link: http://www.apache.org/licenses/LICENSE-2.0.html
+- layout: post
+  title: Jekyll Clean
+  date: 2014-08-23 09:31:11.000000000 -06:00
+  homepage: http://github.com/scotte/jekyll-clean
+  download: https://api.github.com/repos/statixite/jekyll-clean/zipball
+  demo: http://scotte.github.io/jekyll-clean
+  author: Scott Emmons
+  thumbnail: jekyll-clean.png
+  license: Creative Commons Attribution International 4.0
+  license_link: https://creativecommons.org/licenses/by/4.0/legalcode
+  whitelisted: true
+- layout: post
+  title: Mediator
+  date: 2014-08-31 12:03:00.000000000 -06:00
+  homepage: https://github.com/dirkfabisch/mediator
+  download: https://api.github.com/repos/statixite/mediator/zipball
+  demo: http://blog.base68.com
+  author: Dirk Fabisch
+  thumbnail: mediator.png
+  license: MIT License
+  license_link: https://github.com/dirkfabisch/mediator/blob/master/LICENCE
+- layout: post
+  title: Skinny Bones
+  date: 2014-09-03
+  homepage: https://github.com/mmistakes/skinny-bones-jekyll
+  download: https://api.github.com/repos/statixite/skinny-bones-jekyll/zipball
+  demo: http://mmistakes.github.io/skinny-bones-jekyll/
+  author: Michael Rose
+  thumbnail: skinny-bones.gif
+  license: MIT License
+  license_link: https://github.com/mmistakes/skinny-bones-jekyll/blob/master/LICENSE
+- layout: post
+  title: Harmony
+  date: 2014-09-08 18:16:00.000000000 -06:00
+  homepage: https://github.com/gayanvirajith/harmony
+  download: https://api.github.com/repos/statixite/harmony/zipball
+  demo: http://gayan.me/harmony/
+  author: Gayan Virajith
+  thumbnail: harmony.jpg
+  license: MIT License
+  license_link: https://github.com/gayanvirajith/harmony/blob/master/LICENSE.md
+- layout: post
+  title: Contrast
+  date: 2014-09-13 18:03:00.000000000 -06:00
+  homepage: https://github.com/niklasbuschmann/contrast
+  download: https://api.github.com/repos/statixite/contrast/zipball
+  demo: http://niklasbuschmann.github.io/contrast
+  author: Niklas Buschmann
+  thumbnail: contrast.png
+  license: CC0
+  license_link: http://creativecommons.org/publicdomain/zero/1.0/
+- layout: post
+  title: Clean Blog
+  date: 2014-09-27 09:09:00.000000000 -06:00
+  homepage: https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll
+  download: https://api.github.com/repos/statixite/startbootstrap-clean-blog-jekyll/zipball
+  demo: http://ironsummitmedia.github.io/startbootstrap-clean-blog-jekyll/
+  author: Start Bootstrap
+  thumbnail: clean-blog.png
+  license: Apache 2.0
+  license_link: https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll/blob/gh-pages/LICENSE
+- layout: post
+  title: Landing Page
+  date: 2014-10-04
+  homepage: https://github.com/swcool/landing-page-theme
+  download: https://api.github.com/repos/statixite/landing-page-theme/zipball
+  demo: http://shaneweng.com/landing-page-theme/
+  author: Shane Weng
+  thumbnail: landing-page.png
+  license: Apache 2.0
+  license_link: http://www.apache.org/licenses/LICENSE-2.0.html
+- layout: post
+  title: autm-rb
+  date: 2014-10-10 04:00:00.000000000 -06:00
+  homepage: https://github.com/railsr/autm-rb
+  download: https://api.github.com/repos/statixite/autm-rb/zipball
+  author: Kirill Beletskiy
+  thumbnail: autm-rb.png
+  license: MIT License
+  license_link: https://github.com/railsr/autm-rb/blob/master/LICENSE
+- layout: post
+  title: Jekyll Masonry
+  date: 2014-11-08 17:00:00.000000000 -07:00
+  homepage: https://github.com/pasindud/jekyll-masonry
+  download: https://api.github.com/repos/statixite/jekyll-masonry/zipball
+  demo: http://pasindud.github.io/
+  author: Pasindu De Silva
+  thumbnail: jeykllmasonry.jpg
+  license: See GitHub Page
+- layout: post
+  title: Swift
+  date: 2013-11-30 20:55:00.000000000 -07:00
+  homepage: https://github.com/pranavrajs/swift/
+  download: https://api.github.com/repos/statixite/swift/zipball
+  demo: http://pranav.maangalabs.com/swift
+  author: Pranav
+  thumbnail: swift.png
+  license: MIT License
+  license_link: https://github.com/pranavrajs/swift/blob/master/LICENCE
+- layout: post
+  title: Strange Case
+  date: 2014-12-09 17:00:00.000000000 -07:00
+  homepage: https://github.com/thephuse/strange_case
+  download: https://api.github.com/repos/statixite/strange_case/zipball
+  demo: http://thephuse.github.io/strange_case/
+  author: Phuse
+  thumbnail: strangecase.png
+  license: MIT
+  license_link: http://opensource.org/licenses/MIT
+- layout: post
+  title: Freshman21
+  date: 2014-12-20 09:55:00.000000000 -07:00
+  homepage: https://github.com/yulijia/freshman21
+  download: https://api.github.com/repos/statixite/freshman21/zipball
+  demo: http://yulijia.net/freshman21/
+  author: Lijia Yu
+  thumbnail: freshman21.png
+  license: MIT License
+  license_link: https://github.com/yulijia/freshman21/blob/master/LICENSE
+- layout: post
+  title: Uno-dbyll
+  date: 2015-01-01 20:26:00.000000000 -07:00
+  homepage: https://github.com/talk2ankan/uno-dbyll
+  download: https://api.github.com/repos/statixite/uno-dbyll/zipball
+  demo: http://blog.ankanbiswas.in/uno-dbyll/
+  author: Ankan Biswas
+  thumbnail: uno-dbyll_00.png
+  license: MIT
+  license_link: https://raw.githubusercontent.com/talk2ankan/uno-dbyll/gh-pages/LICENSE
+- layout: post
+  title: Minimal-block
+  date: 2015-01-03 06:46:00.000000000 -07:00
+  homepage: https://github.com/drvy/minimal-block
+  download: https://api.github.com/repos/statixite/minimal-block/zipball
+  author: Dragomir Yordanov
+  thumbnail: minimal-block.png
+  license: MIT License
+  license_link: https://github.com/drvy/minimal-block/blob/master/LICENSE.md
+- layout: post
+  title: Compass
+  date: 2015-01-07 12:33:00.000000000 -07:00
+  homepage: https://github.com/excentris/compass
+  download: https://api.github.com/repos/statixite/compass/zipball
+  demo: http://excentris.github.io/compass/
+  author: Eduardo Rubio
+  thumbnail: compass.png
+  license: MIT
+  license_link: https://github.com/excentris/compass/blob/master/LICENSE
+- layout: post
+  title: Gaya
+  date: 2015-01-14 11:14:00.000000000 -07:00
+  homepage: https://github.com/gayanvirajith/gaya
+  download: https://api.github.com/repos/statixite/gaya/zipball
+  demo: http://gayan.me/gaya/
+  author: Gayan Virajith
+  thumbnail: gaya.jpg
+  license: MIT License
+  license_link: https://github.com/gayanvirajith/gaya/blob/master/LICENSE.md
+- layout: post
+  title: Travelogue
+  date: 2015-01-14
+  homepage: https://github.com/SalGnt/Travelogue
+  download: https://api.github.com/repos/statixite/Travelogue/zipball
+  demo: http://salgnt.github.io/Travelogue/
+  author: Salvatore Gentile
+  thumbnail: travelogue.png
+  license: The MIT License (MIT)
+  license_link: https://github.com/SalGnt/Travelogue/blob/master/LICENSE
+- layout: post
+  title: Long Haul
+  date: 2015-01-22 05:00:00.000000000 -07:00
+  homepage: https://github.com/brianmaierjr/long-haul
+  download: https://api.github.com/repos/statixite/long-haul/zipball
+  demo: http://brianmaierjr.com/long-haul/
+  author: Brian Maier Jr.
+  thumbnail: longhaul.png
+  license: MIT
+  license_link: https://github.com/brianmaierjr/long-haul/blob/master/LICENSE
+- layout: post
+  title: QckTheme
+  date: 2015-01-24
+  homepage: https://github.com/qckanemoto/jekyll-qck-theme
+  download: https://api.github.com/repos/statixite/jekyll-qck-theme/zipball
+  demo: http://qckanemoto.github.io/jekyll-qck-theme/
+  author: Takashi Kanemoto
+  thumbnail: qck-theme.png
+  license: MIT License
+  license_link: https://github.com/qckanemoto/jekyll-qck-theme/blob/master/LICENSE
+- layout: post
+  title: Rifyll
+  date: 2015-01-31 06:28:53.000000000 -07:00
+  homepage: https://github.com/itsrifat/rifyll
+  download: https://api.github.com/repos/statixite/rifyll/zipball
+  demo: http://itsrifat.github.io/rifyll/
+  author: Moinul
+  thumbnail: rifyll.png
+  license: MIT License
+  license_link: https://github.com/itsrifat/rifyll/blob/master/LICENSE.md
+- layout: post
+  title: Grayscale
+  date: 2015-02-04
+  homepage: https://github.com/jeromelachaud/grayscale-theme
+  download: https://api.github.com/repos/statixite/grayscale-theme/zipball
+  demo: https://jeromelachaud.github.io/grayscale-theme
+  author: Jerome Lachaud
+  thumbnail: grayscale.jpg
+  license: Apache 2.0
+  license_link: http://www.apache.org/licenses/LICENSE-2.0.html
+- layout: post
+  title: Metaphor
+  date: 2015-02-04 18:42:00.000000000 -07:00
+  homepage: https://github.com/prio101/metaphor-jekyll
+  download: https://api.github.com/repos/statixite/metaphor-jekyll/zipball
+  demo: http://mahabubislam.me
+  author: Mahabub I.
+  thumbnail: metaphor.png
+  license: MIT License
+  license_link: http://opensource.org/licenses/MIT
+- layout: post
+  title: Naringu
+  date: 2015-02-20 19:30:00.000000000 -07:00
+  homepage: https://github.com/ariestiyansyah/naringu
+  download: https://api.github.com/repos/statixite/naringu/zipball
+  demo: http://naringu.oonlab.com
+  author: Rizky Ariestiyansyah
+  thumbnail: naringu.png
+  license: MIT License
+  license_link: https://github.com/ariestiyansyah/naringu/blob/master/LICENSE.md
+- layout: post
+  title: Tufte-Jekyll
+  date: 2015-02-22 01:46:00.000000000 -07:00
+  homepage: https://github.com/clayh53/tufte-jekyll
+  download: https://api.github.com/repos/statixite/tufte-jekyll/zipball
+  demo: http://clayh53.github.io/tufte-jekyll/
+  author: Clay Harmon
+  thumbnail: tufte-jekyll-theme.png
+  license: MIT
+  license_link: https://github.com/clayh53/tufte-jekyll/blob/master/LICENSE
+- layout: post
+  title: Feeling Responsive
+  date: 2015-03-02
+  homepage: https://github.com/Phlow/feeling-responsive
+  download: https://api.github.com/repos/statixite/feeling-responsive/zipball
+  demo: http://phlow.github.io/feeling-responsive/
+  author: Phlow – Moritz »mo.« Sauer
+  thumbnail: feeling-responsive.jpg
+  license: MIT License
+  license_link: https://github.com/Phlow/feeling-responsive/blob/gh-pages/LICENSE
+- layout: post
+  title: Emerald
+  date: 2015-03-21 09:00:00.000000000 -06:00
+  homepage: https://github.com/KingFelix/emerald
+  download: https://api.github.com/repos/statixite/emerald/zipball
+  demo: http://www.jacoporabolini.com/emerald/
+  author: Jacopo Rabolini
+  thumbnail: emerald.png
+  license: MIT
+  license_link: https://github.com/KingFelix/emerald/blob/master/license.md
+- layout: post
+  title: One Page Wonder
+  homepage: https://github.com/mushishi78/one-page-wonder-jekyll
+  download: https://api.github.com/repos/statixite/one-page-wonder-jekyll/zipball
+  demo: http://mushishi78.github.io/one-page-wonder-jekyll
+  author: Max White
+  thumbnail: one-page-wonder.jpg
+  license: MIT License
+- layout: post
+  title: Carte Noire
+  date: 2015-04-24 09:00:00.000000000 -06:00
+  homepage: https://github.com/jacobtomlinson/carte-noire
+  download: https://api.github.com/repos/statixite/carte-noire/zipball
+  demo: http://carte-noire.jacobtomlinson.co.uk/
+  author: Jacob Tomlinson
+  thumbnail: carte-noire.png
+  license: GPLv3
+  license_link: https://github.com/jacobtomlinson/carte-noire/blob/gh-pages/LICENSE
+  whitelisted: true
+- layout: post
+  title: CleanMagicMedium
+  date: 2014-05-04 06:00:00.000000000 -06:00
+  homepage: https://github.com/SpaceG/CleanMagicMedium-Jekyll
+  download: https://api.github.com/repos/statixite/CleanMagicMedium-Jekyll/zipball
+  demo: https://lucasgatsas.ch
+  author: Lucas Gatsas
+  thumbnail: cleanmagicmedium.png
+  license: MIT
+  license_link: https://github.com/SpaceG/CleanMagicMedium-Jekyll
+- layout: post
+  title: Pithy
+  date: 2015-05-08 06:42:00.000000000 -06:00
+  homepage: https://github.com/smallmuou/Jekyll-Pithy
+  download: https://api.github.com/repos/statixite/Jekyll-Pithy/zipball
+  demo: http://wenva.github.io/
+  author: Pawpaw
+  thumbnail: pithy.png
+  license: MIT License
+  license_link: http://opensource.org/licenses/MIT
+- layout: post
+  title: BlackDoc
+  date: 2015-05-21 22:59:00.000000000 -06:00
+  homepage: https://github.com/karloespiritu/BlackDoc
+  download: https://api.github.com/repos/statixite/BlackDoc/zipball
+  demo: http://karloespiritu.com/blackdoc
+  author: Karlo Espiritu
+  thumbnail: blackdoc.png
+  license: MIT License
+  license_link: https://github.com/karloespiritu/BlackDoc/blob/master/README.md
+- layout: post
+  title: Polar Bear
+  date: 2015-05-25 01:42:00.000000000 -06:00
+  homepage: https://github.com/diezcami/polar-bear-theme/
+  download: https://api.github.com/repos/statixite/polar-bear-theme/zipball
+  demo: https://diezcami.github.io/polar-bear-theme
+  author: Camille Diez
+  thumbnail: polarbear.png
+  license: MIT License
+  license_link: https://github.com/diezcami/polar-bear-theme/blob/master/LICENSE
+- layout: post
+  title: Cool Concise High-end
+  date: 2015-05-26 02:20:00.000000000 -06:00
+  homepage: https://github.com/Gaohaoyang/gaohaoyang.github.io/releases/tag/v1.1
+  download: https://api.github.com/repos/statixite/gaohaoyang.github.io/zipball
+  demo: http://gaohaoyang.github.io/
+  author: Gaohaoyang
+  thumbnail: cool-concise-high-end.jpg
+  license: MIT License
+  license_link: https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/LICENSE.md
+- layout: post
+  title: HPSTR Version 2 - Vietnamese
+  date: 2015-06-01 18:10:00.000000000 -06:00
+  homepage: https://github.com/minhhuy150894/minhhuy150894.github.io
+  download: https://api.github.com/repos/statixite/minhhuy150894.github.io/zipball
+  demo: http://minhhuy150894.github.io
+  author: David Ng (Nguyen Minh Huy) - Michael Rose
+  thumbnail: HPSTRver2.png
+  license: MIT
+  license_link: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/LICENSE
+- layout: post
+  title: iCard-Resume
+  date: 2015-06-02 02:08:00.000000000 -06:00
+  homepage: https://github.com/ddbullfrog/iCard-Resume
+  download: https://api.github.com/repos/statixite/iCard-Resume/zipball
+  demo: http://ddbullfrog.github.io/iCard-Resume
+  author: Dong Liang
+  thumbnail: iCard-Resume.png
+  license: MIT License
+  license_link: https://github.com/ddbullfrog/iCard-Resume/blob/gh-pages/LICENSE.md
+- layout: post
+  title: Kactus
+  date: 2015-06-11 06:40:00.000000000 -06:00
+  homepage: https://github.com/nickbalestra/kactus
+  download: https://api.github.com/repos/statixite/kactus/zipball
+  demo: http://nick.balestra.ch/2015/Kactus/
+  author: Nick Balestra
+  thumbnail: kactus.png
+  license: MIT License
+  license_link: https://github.com/nickbalestra/kactus/blob/master/LICENSE
+- layout: post
+  title: OpenTheme
+  date: 2014-12-16 05:00:00.000000000 -07:00
+  homepage: https://github.com/open-start/opentheme
+  download: https://api.github.com/repos/statixite/opentheme/zipball
+  demo: http://opentheme.co
+  author: Manav Sehgal
+  thumbnail: opentheme.png
+  license: MIT
+  license_link: https://github.com/open-start/opentheme/blob/master/LICENSE
+- layout: post
+  title: ICE AND FIRE
+  date: 2014-12-16 05:00:00.000000000 -07:00
+  homepage: https://github.com/SpaceG/iceandfire
+  download: https://api.github.com/repos/statixite/iceandfire/zipball
+  demo: https://lucasgatsas.ch
+  author: Lucas Gatsas
+  thumbnail: iceandfire.png
+  license: MIT
+  license_link: https://github.com/SpaceG/iceandfire/blob/master/LICENSE
+- layout: post
+  title: Sustain
+  date: 2013-05-31 19:42:00.000000000 -06:00
+  homepage: https://github.com/biomadeira/sustain
+  download: https://github.com/biomadeira/sustain
+  demo: https://biomadeira.github.io/sustain
+  author: Fábio Madeira 
+  thumbnail: https://raw.githubusercontent.com/biomadeira/sustain/gh-pages/assets/images/screen1.png
+  license: MIT License
+  license_link: https://github.com/biomadeira/sustain/blob/gh-pages/LICENSE.txt
+  whitelisted: true

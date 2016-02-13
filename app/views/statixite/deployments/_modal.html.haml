@@ -1,0 +1,18 @@
+= bootstrap_form_for [@site, @deployment], html: { 'v-on': 'submit: addDeployment($event)' } do |f|
+  #deploymentModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "boldLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} &times;
+          %h4#boldLabel.modal-title Create Deployment
+        .modal-body
+          .form-group
+            %h3 Push your site live
+            = fields_for @site do |s|
+              = s.label :domain_name
+              = s.text_field :domain_name, placeholder: 'example.com', class: 'form-control'
+          %p.help-block Every site is entitled to a statixite.com subdomain.  Yours is <strong>#{@site.statixite_name}</strong>.  In order for your custom domain to work, you will need to create a CNAME record.  A hostname will be created after the first deployment which you can find on the #{link_to("settings page", settings_site_path(@site))}.  If you would like to use a naked domain, then you may use <a href="https://dnsimple.com" target="_blank">DNSimple</a>, or use a naked domain redirect service provided by <a href="http://wwwizer.com/" target="_blank">wwwizer.com</a>
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
+          %button.btn.btn-primary{"data-dismiss" => "modal", type: "submit", 'v-on': 'click: addDeployment($event, true)'} Deploy

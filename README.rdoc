@@ -1,0 +1,145 @@
+= Statixite
+
+Statixite is a management tool for static websites originally designed to work with {Jekyll}[https://jekyllrb.com], but with the hopes to support other static site generators. This project rocks and uses MIT-LICENSE and we always welcome contributors.  {Statixite}[https://statixite.com] is also available as a service.  The project is made so that developers can create there own management tool and setup custom deployment options, such as {Github Pages}[https://pages.github.com/], {Amazon S3}[https://aws.amazon.com/s3], or {Rackspace Cloud Files}[https://www.rackspace.com/en-us/cloud/files]
+
+=== Demo[https://app.statixite.com/users/sign_in?demo=true]
+
+=== Requirements
+
+* Ruby on Rails
+* Postgres
+* Imagemagick
+
+=== Getting started
+
+Statixite is a Rails::Engine packaged into a gem, so it can be added to any Rails project. To start with a fresh project, use the following command:
+
+Create a new rails app
+
+  bash$ rails new myapp --database=postgresql
+
+Add Statixite to your gemfile
+
+  gem 'statixite'
+
+Run bundle and the Statixite generator to write the config file.
+
+  bash$ bundle install
+  bash$ rails generate statixite
+
+This will generate the following file:
+
+  # config/initializers/statixite.rb
+  Statixite.setup do |config|
+    # Used for Media Uploader
+    # Valid options -
+    # :file which commit media files directly to the associated site repo
+    # :fog use Fog::Storage => A carrierwave.rb initializer file is required: see https://github.com/carrierwaveuploader/carrierwave 
+    config.carrierwave_storage = :file
+
+    # Where to deploy
+    # Valid options -
+    # :local stores sites at /path/to/app/sites/:site_name/build
+    # :github pushes sites to your github account requires github creds and ssh access to account
+    # :fog pushes sites using fog storage requires fog creds tested against S3 and Rackspace Cloud Files
+    config.deploy_sites_to = :local
+
+    # Deploying sites to github requires a personal access token to create repos
+    # github creds => get personal token from github https://github.com/blog/1509-personal-api-tokens
+    # config.github_user = username
+    # config.github_token = ENV["GITHUB_TOKEN"]
+
+    # fog creds AWS S3 example
+    # config.fog_credentials = {
+    #   :provider                 => 'AWS',
+    #   :aws_access_key_id        => ENV["AWS_ACCESS_KEY_ID"],
+    #   :aws_secret_access_key    => ENV["AWS_SECRET_ACCESS_KEY"]
+    # }
+
+    # fog creds Rackspace Cloud Files example
+    # config.fog_credentials {
+    #   :provider                 => 'Rackspace',
+    #   :rackspace_username  => ENV['RACKSPACE_USERNAME'],
+    #   :rackspace_api_key   => ENV['RACKSPACE_API_KEY'],
+    #   :rackspace_region    => :dfw
+    # }
+  end
+
+=== Mount the Engine
+
+Make sure to mount the Statixite Engine in your routes file
+
+  # config/routes.rb
+  Rails.application.routes.draw do
+
+    mount Statixite::Engine => "/statixite"
+
+    # ...
+  end
+
+
+=== Migrate the tables
+
+  bash$ rake db:migrate
+
+You can now start your dev server and begin creating sites at [http://localhost:3000/statixite/sites]
+
+=== Site Structure
+
+  - root
+    |__ sites
+        |__ :site_name # As defined when a site is created
+            |__ clone # Main directory where changes are made
+            |__ repo # Where changes are pushed which can be configured to be a remote repository
+            |__ build # Similar to the _site folder built when a deployment is made
+    |__ public
+        |__ statixite # Statixite Namespace
+            |__ previews
+                |__ :site_name 
+  
+
+  
+=== Deployment Options
+
+==== Local
+
+Sites are built locally.  In production you could use a similar NGINX config to serve the sites:
+
+  server {
+    listen 80;
+    server_name ~^(?<subdomain>.+)\.example\.com$;
+    root /path/to/app/sites/$subdomain/build;
+    index index.html;
+    error_page 404 /404.html;
+    location /404.html {
+      root /path/to/app/sites/$subdomain/build;
+    }
+  }
+
+==== Github
+  
+This option requires a personal access token to be created through your github account. Sites will be deployed to a repo prefixed with "statixite-" and deployed to the "gh-pages" branch.
+
+  config.deploy_sites_to = :github
+  config.github_token = 'some token'
+  
+==== Fog
+
+Fog is a cloud service Ruby gem that can allow you to deploy sites to cloud containers. Fog[fog.io]
+
+  config.deploy_sites_to = :fog
+
+  # Amazon S3 example
+  config.fog_crednentials {
+    :provider                 => 'AWS',
+    :aws_access_key_id        => ENV["AWS_ACCESS_KEY_ID"],
+    :aws_secret_access_key    => ENV["AWS_SECRET_ACCESS_KEY"],
+  }
+
+=== Contributing
+
+This repo needs some love!  We always encourage contributors. Please follow a few simple guidelines:
+
+1. No nonsense
+2. Write Some Good Specs (It needs more!)
+3. Refactoring, other suggestions welcome

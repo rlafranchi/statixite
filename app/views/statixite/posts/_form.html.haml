@@ -1,0 +1,65 @@
+- content_for :pre_javascript do
+  = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"
+- content_for :stylesheets do
+  = stylesheet_link_tag "dropzone/dropzone"
+  = stylesheet_link_tag "jsoneditor/dist/jsoneditor"
+- content_for :inline_javascript do
+  = javascript_include_tag "jsoneditor/dist/jsoneditor-minimalist.min"
+  = javascript_include_tag "statixite/editor"
+  :javascript
+    $(document).ready(function() {
+      $.ajax({
+        url: "/statixite/sites/#{@site.id}/media.json",
+        success: function(response) {
+          mdEditor.$data.photos = response;
+        }
+      });
+    });
+.row
+  .col-sm-12
+    %h3 Front Matter Values
+    #jsoneditor{ "v-on": "change: watchJSON()" }
+    %br
+#editor
+  = bootstrap_form_for [@site, @post], html: { id: 'postForm', 'v-on': 'submit: addPost($event)' } do |f|
+    .form-group
+      .row
+        .col-md-6
+          = f.hidden_field :title, "v-model": "title"
+      .form-group
+        .row
+          .col-md-12
+            .panel.panel-primary
+              .panel-heading.panel-icons
+                .btn-group{ role: 'group', "aria-label": '...' }
+                  %button.btn.btn-default{"aria-label" => "Bold", :type => "button", "data-toggle": "modal", "data-target": "#boldText"}
+                    %span.glyphicon.glyphicon-bold{"aria-hidden" => "true"}
+                  %button.btn.btn-default{"aria-label" => "Italics", :type => "button", "data-toggle": "modal", "data-target": "#italicText"}
+                    %span.glyphicon.glyphicon-italic{"aria-hidden" => "true"}
+                  %button.btn.btn-default{"aria-label" => "List", :type => "button", "data-toggle": "modal", "data-target": "#listModal"}
+                    %span.glyphicon.glyphicon-list{"aria-hidden" => "true"}
+                  %button.btn.btn-default{"aria-label" => "Link", :type => "button", "data-toggle": "modal", "data-target": "#linkModal"}
+                    %span.glyphicon.glyphicon-link{"aria-hidden" => "true"}
+                  %button.btn.btn-default{"aria-label" => "Video", :type => "button", "data-toggle": "modal", "data-target": "#videoModal"}
+                    %span.glyphicon.glyphicon-facetime-video{"aria-hidden" => "true"}
+                  %button.btn.btn-default{"aria-label" => "Picture", :type => "button", "data-toggle": "modal", "data-target": "#imageModal"}
+                    %span.glyphicon.glyphicon-picture{"aria-hidden" => "true"}
+                  -# %button.btn.btn-default{"aria-label" => "Left Align", :type => "button"}
+                    %span.glyphicon.glyphicon-align-left{"aria-hidden" => "true"}
+                  -# %button.btn.btn-default{"aria-label" => "Right Align", :type => "button"}
+                    %span.glyphicon.glyphicon-align-right{"aria-hidden" => "true"}
+                  -# %button.btn.btn-default{"aria-label" => "Center Align", :type => "button"}
+                    %span.glyphicon.glyphicon-align-center{"aria-hidden" => "true"}
+                  -# %button.btn.btn-default{"aria-label" => "Justify", :type => "button"}
+                    %span.glyphicon.glyphicon-align-justify{"aria-hidden" => "true"}
+                  -# %button.btn.btn-default{"aria-label" => "Help", :type => "button"}
+                    %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+              .panel-body#editor
+                .form_group
+                  = text_area(:post, :content, "v-model" => "input", debounce: "300", skip_label: true, class: '')
+                  %div{ class: 'preview', "v-html": "input | marked" }
+              .panel-footer
+                = f.submit 'Save', class: 'btn btn-primary btn-tny', 'v-on': "click: addPost($event, true)"
+    #frontMatterData{data: { 'front-matter': @post.front_matter.to_json}}
+  = render 'statixite/posts/modals'
+  = render 'statixite/posts/image_modal'

@@ -1,0 +1,39 @@
+= bootstrap_form_flash(@site)
+- if @site.domain_name.present?
+  %h1
+    Deployments for #{@site.domain_name}
+    %small
+      = link_to "http://#{@site.domain_name}", target: "_blank" do
+        %span.glyphicon.glyphicon-new-window
+- else
+  %h1
+    Deployments for #{@site.statixite_name}
+    %small
+      = link_to "http://#{@site.statixite_name}", target: "_blank" do
+        %span.glyphicon.glyphicon-new-window
+%hr
+%table.table
+  %caption Your Deployments
+  %thead
+    %tr
+      %th Date
+      %th Version
+      %th= link_to 'New Deployment <i class="glyphicon glyphicon-plus"></i>'.html_safe, '#deploymentModal', class: 'btn btn-primary', "data-toggle": "modal", "data-target": "#deploymentModal"
+  %tbody
+    - @site.deployments.order(created_at: 'DESC').each_with_index do |deployment, i|
+      %tr
+        %td{:scope => "row"}= deployment.created_at
+        %td= deployment.version
+        %td
+          = link_to(site_deployment_export_path(@site, deployment, format: :zip), class: 'btn btn-default') do
+            %span.glyphicon.glyphicon-download{"aria-hidden" => "true"}
+            Export Files
+          - if i == 0
+            %button.btn.btn-success{ disabled: 'disabled' }
+              %span.glyphicon.glyphicon-check.right
+              Current
+          -# else TODO: refresh version
+            = link_to("/#", class: 'btn btn-default') do
+              %span.glyphicon.glyphicon-refresh{"aria-hidden" => "true"}
+              Restore
+= render 'modal'

@@ -1,0 +1,30 @@
+/ Fixed navbar
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to image_tag("statixite/STATIXITE-logo.png", height: "25"), "https://statixite.com", class: 'navbar-brand', title: 'Powered by Statixite', target: '_blank'
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li{class: current_class?(sites_path)}
+          = link_to(sites_path) do
+            Sites
+            - if current_page?(sites_path)
+              %span.sr-only (current)
+        %li{class: current_class?(new_site_path)}
+          = link_to(new_site_path) do
+            New Site
+            %i.glyphicon.glyphicon-plus
+            - if current_page?(new_site_path)
+              %span.sr-only (current)
+        - if @site.present?  && !current_page?(new_site_path(@site)) && !@site.new_record?
+          %li{class: "dropdown #{current_parent_class?(@site)}"}
+            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              = @site.statixite_name
+              %span.caret
+            %ul.dropdown-menu{:role => "menu"}
+              = render 'layouts/statixite/site_sub_items'

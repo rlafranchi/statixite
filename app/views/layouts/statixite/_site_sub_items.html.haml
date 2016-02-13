@@ -1,0 +1,38 @@
+%li{class: current_class?(settings_site_path(@site))}
+  = link_to(settings_site_path(@site)) do
+    Settings
+    %i.glyphicon.glyphicon-cog
+    - if current_page?(settings_site_path(@site))
+      %span.sr-only (current)
+%li{class: current_class?(site_template_path(@site))}
+  = link_to(site_template_path(@site)) do
+    Template
+    - if current_page?(site_template_path(@site))
+      %span.sr-only (current)
+%li{class: current_class?(site_path(@site))}
+  = link_to build_and_preview_site_path(@site) do
+    Preview
+    %i.glyphicon.glyphicon-eye-open
+    - if current_page?(site_path(@site))
+      %span.sr-only (current)
+%li{class: current_class?(site_posts_path(@site))}
+  = link_to site_posts_path(@site) do
+    Posts
+    - if current_page?(site_posts_path(@site))
+      %span.sr-only (current)
+%li{class: current_class?(new_site_post_path(@site))}
+  = link_to(new_site_post_path(@site)) do
+    New Post
+    %i.glyphicon.glyphicon-plus
+    - if current_page?(new_site_post_path(@site))
+      %span.sr-only (current)
+%li{class: current_class?(site_media_path(@site))}
+  = link_to(site_media_path(@site)) do
+    Media
+    - if current_page?(site_media_path(@site))
+      %span.sr-only (current)
+%li{class: current_class?(site_deployments_path(@site))}
+  = link_to(site_deployments_path(@site)) do
+    Deploy
+    - if current_page?(site_deployments_path(@site))
+      %span.sr-only (current)

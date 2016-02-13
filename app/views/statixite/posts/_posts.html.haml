@@ -1,0 +1,15 @@
+%table.table
+  %caption Your Posts
+  %thead
+    %tr
+      %th Post Title
+      %th= link_to "New Post <i class='glyphicon glyphicon-plus'></i>".html_safe, new_site_post_path, class: 'btn btn-primary'
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %th{:scope => "row"}= post.title
+        %td
+          = link_to(edit_site_post_path(@site, post), class: 'btn btn-default') do
+            %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
+            Edit Post
+= paginate @posts, :remote => true

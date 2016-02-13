@@ -1,0 +1,111 @@
+/ Bold Text
+#boldText.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "boldLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#boldLabel.modal-title Add Bold Text
+      .modal-body
+
+        %input#boldInput{ type: 'text', 'v-model': 'boldText', class: 'form-control', 'v-on': 'keyup: addBoldText | key enter' }
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'} Cancel
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button", "v-on": "click: addBoldText"} Save Changes
+
+/ Italic Text
+#italicText.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "italicLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#italicLabel.modal-title Add Italic Text
+      .modal-body
+
+        %input#italicInput{ type: 'text', 'v-model': 'italicText', class: 'form-control', 'v-on': 'keyup: addItalicText | key enter' }
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'} Cancel
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button", "v-on": "click: addItalicText"} Save Changes
+
+/ List
+#listModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "listLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#listLabel.modal-title Add List
+      .modal-body
+        %ul
+          %li{ 'v-repeat': 'listItems' } {{$value}}
+        .row
+          .col-sm-8
+            %input#listInput{ type: 'text', 'v-model': 'listItem', class: 'form-control', 'v-on': 'keyup: addListItem | key enter' }
+          .col-sm-4
+            %button{ class: 'btn btn-default', 'v-on': 'click: addListItem' }
+              %i.glyphicon.glyphicon-plus
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'} Cancel
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button", "v-on": "click: addList"} Save Changes
+
+/ Link
+#linkModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "linkLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#linkLabel.modal-title Add Link
+      .modal-body
+        .form-group
+          .row
+            .col-sm-6
+              %label{ for: 'linkInput' } Url
+              %input#linkInput.form-control{type: 'text', 'v-model': 'link.url' }
+            .col-sm-6
+              %label{ for: 'linkTextInput' } Text
+              %input#linkInput.form-control{type: 'text', 'v-model': 'link.text', 'v-on': 'keyup: addLink | key enter'}
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'} Cancel
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button", "v-on": "click: addLink"} Save Changes
+
+/ Video
+#videoModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "videoLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#videoLabel.modal-title Add Video
+      .modal-body
+        %p Youtube and Vimeo urls are supported for videos.  You can also paste in any embed code directly into your posts.
+        .form-group
+          %label{ for: 'videoInput' } Video Url
+          %input#videoInput.form-control{type: 'text', 'v-model': 'video.url', 'v-on': 'keyup: addVideo | key enter' }
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", 'v-on': 'click: cancelModal'} Cancel
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button", "v-on": "click: addVideo"} Save Changes
+
+= content_for :inline_javascript do
+  :javascript
+    $(document).ready(function() {
+      $('#boldText').on('shown.bs.modal', function () {
+        $('#boldInput').focus()
+      });
+      $('#italicText').on('shown.bs.modal', function () {
+        $('#italicInput').focus()
+      });
+      $('#listModal').on('shown.bs.modal', function () {
+        $('#listInput').focus()
+      });
+      $('#linkModal').on('shown.bs.modal', function () {
+        $('#linkInput').focus()
+      });
+      $('#videoModal').on('shown.bs.modal', function () {
+        $('#videoInput').focus()
+      });
+    });

@@ -1,0 +1,24 @@
+%h1
+  Preview for #{@site.site_name}
+  = link_to "<i class='glyphicon glyphicon-new-window'></i>".html_safe, @site.preview_url, target: "_blank", title: "Open Preview"
+  = link_to "<i class='glyphicon glyphicon-refresh'></i>".html_safe, build_and_preview_site_path, title: "Refresh Preview"
+%hr
+.row
+  .col-sm-8
+    %p
+      The preview for #{@site.statixite_name} is ready and available at
+      = link_to @site.preview_url, @site.preview_url, :target => "_blank"
+    %p Site previews use a different authentication method.  Feel free to change the login information below.
+    - if @password
+      %p You may use the following credentials to view the preview of your site.  This will be the only time the password is available for viewing, but you may update the login credentials at anytime.
+      %strong login: #{@site.site_name}
+      %br
+      %strong password: #{@password}
+      %br
+      %br
+.row
+  .col-sm-4
+    = bootstrap_form_tag url: preview_credentials_site_path(@site) do |f|
+      = f.text_field :login
+      = f.password_field :password
+      = f.submit

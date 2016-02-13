@@ -1,0 +1,12 @@
+%meta(charset="utf-8")
+%meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+%meta(name="viewport" content="width=device-width, initial-scale=1.0")
+%title= content_for?(:title) ? yield(:title) : "Statixite"
+= csrf_meta_tags
+/ Le HTML5 shim, for IE6-8 support of HTML elements
+/[if lt IE 9]
+  = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+= yield :stylesheets
+= stylesheet_link_tag "statixite/application", :media => "all"
+= stylesheet_link_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("controllers/#{params[:controller]}_#{params[:action]}.css")
+= favicon_link_tag "statixite/favicon.ico"

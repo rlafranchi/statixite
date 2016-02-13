@@ -1,0 +1,13 @@
+- content_for :inline_javascript do
+  - flash.each do |type, message|
+    - next if message.blank?
+    - if type == "notice" || type == "success" || type == "info"
+      :javascript
+        $(document).ready(function() {
+          $.notify('#{escape_javascript(message)}', 'success')
+        });
+    - else
+      :javascript
+        $(document).ready(function() {
+          $.notify('#{escape_javascript(message)}', 'error')
+        });
