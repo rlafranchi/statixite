@@ -57,8 +57,8 @@ This will generate the following file:
     # }
 
     # fog creds Rackspace Cloud Files example
-    # config.fog_credentials {
-    #   :provider                 => 'Rackspace',
+    # config.fog_credentials = {
+    #   :provider            => 'Rackspace',
     #   :rackspace_username  => ENV['RACKSPACE_USERNAME'],
     #   :rackspace_api_key   => ENV['RACKSPACE_API_KEY'],
     #   :rackspace_region    => :dfw
@@ -130,7 +130,7 @@ Fog is a cloud service Ruby gem that can allow you to deploy sites to cloud cont
   config.deploy_sites_to = :fog
 
   # Amazon S3 example
-  config.fog_crednentials {
+  config.fog_crednentials = {
     :provider                 => 'AWS',
     :aws_access_key_id        => ENV["AWS_ACCESS_KEY_ID"],
     :aws_secret_access_key    => ENV["AWS_SECRET_ACCESS_KEY"],
