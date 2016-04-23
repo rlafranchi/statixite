@@ -11,14 +11,31 @@ module Statixite
         @cloud_directory = @fog_client.directories.create :key => @container_name, :public => true
         case Statixite.config.fog_credentials[:provider]
         when 'AWS'
-          @fog_client.put_bucket_website(@container_name, "index.html", :key => "404.html")
+          @fog_client.put_bucket_website(@container_name, IndexDocument: "index.html", ErrorDocument: "404.html")
+          @fog_client.put_bucket_policy(@container_name,
+            {
+              "Statement" => [
+                { "Sid"       => "PublicReadGetObject",
+                  "Effect"    => "Allow",
+                  "Principal" => "*",
+                  "Action"    => "s3:GetObject",
+                  "Resource"  => "arn:aws:s3:::#{@container_name}/*"
+                }
+              ]
+            }
+          )
         when 'Rackspace'
           @cloud_directory.metadata[:web_index] = "index.html"
           @cloud_directory.metadata[:web_error] = "error.html"
         end 
       end
       if @site.hostname.nil? && @cloud_directory.public_url.present?
-        @site.hostname = URI(@cloud_directory.public_url).host
+        case Statixite.config.fog_credentials[:provider]
+        when 'AWS'
+          @site.hostname = "#{@container_name}.s3-website-#{@fog_client.region}.amazonaws.com"
+        when 'Rackspace'
+          @site.hostname = URI(@cloud_directory.public_url).host
+        end
         @site.save
       end
     end

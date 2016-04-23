@@ -5,6 +5,12 @@
     %small
       = link_to "http://#{@site.domain_name}", target: "_blank" do
         %span.glyphicon.glyphicon-new-window
+- elsif @site.hostname.present?
+  %h1
+    Deployments for #{@site.hostname}
+    %small
+      = link_to "http://#{@site.hostname}", target: "_blank" do
+        %span.glyphicon.glyphicon-new-window
 - else
   %h1
     Deployments for #{@site.statixite_name}

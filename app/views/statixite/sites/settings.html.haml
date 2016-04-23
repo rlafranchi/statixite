@@ -62,7 +62,7 @@
   = stylesheet_link_tag "jsoneditor/dist/jsoneditor"
 %h1 Settings for #{@site.statixite_name}
 %hr
-%p The settings found here are equivalent to the settings found in a <kbd>_config.yml</kbd> file for a typical Jekyll Site.  To use a custom domain, enter it here.  Once you deploy your site for the first time, a hostname will be created.  Use this hostname for create a cname for your domain.  If you would like to use a naked domain, then you may use <a href="https://dnsimple.com" target="_blank">DNSimple</a>, or use a naked domain redirect service provided by <a href="http://wwwizer.com/" target="_blank">wwwizer.com</a>. 
+%p The settings found here are equivalent to the settings found in a <kbd>_config.yml</kbd> file for a typical Jekyll Site.  To use a custom domain, enter it here.  Once you deploy your site for the first time, a hostname will be created for configurations that use Amazon S3 or Rackspace Cloud Files.  Use this hostname for create a cname for your domain.  If you would like to use a naked domain, then you may use <a href="https://dnsimple.com" target="_blank">DNSimple</a>, or use a naked domain redirect service provided by <a href="http://wwwizer.com/" target="_blank">wwwizer.com</a>.  Github Pages deployments will automatically set your baseurl setting to equal "/statixite-#{@site.site_name}"
 
 #jsoneditor
 %br
@@ -70,8 +70,16 @@
   .form-group
     .col-sm-8
       = f.text_field :domain_name, label: 'Domain Name', placeholder: 'example.com', label_col: "col-sm-4", control_col: "col-sm-8"
+    .col-sm-4
+      - if @site.domain_name.present?
+        = link_to "http://#{@site.domain_name}", target: "_blank" do
+          %span.glyphicon.glyphicon-new-window 
     .col-sm-8
       = f.text_field :hostname, label: 'Host Name', label_col: "col-sm-4", control_col: "col-sm-8", placeholder: 'Hostname is created on the first deployment', disabled: ''
+    .col-sm-4
+      - if @site.hostname.present?
+        = link_to "http://#{@site.domain_name}", target: "_blank" do
+          %span.glyphicon.glyphicon-new-window 
   = f.submit 'Save Settings', class: 'btn btn-primary'
   %i.glyphicon.glyphicon-ok.hidden
   %i.glyphicon.glyphicon-exclamation-sign.hidden
