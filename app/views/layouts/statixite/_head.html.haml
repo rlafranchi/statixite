@@ -8,5 +8,8 @@
   = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
 = yield :stylesheets
 = stylesheet_link_tag "statixite/application", :media => "all"
-= stylesheet_link_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("controllers/#{params[:controller]}_#{params[:action]}.css")
+- if Rails.env.development? || Rails.env.test?
+  = stylesheet_link_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("controllers/#{params[:controller]}_#{params[:action]}.css")
+- else
+  = stylesheet_link_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets_manifest.files.map { |_,obj| obj }.map { |obj| obj["logical_path"] }.flatten.include?("controllers/#{params[:controller]}_#{params[:action]}.css")
 = favicon_link_tag "statixite/favicon.ico"

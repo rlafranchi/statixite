@@ -14,14 +14,10 @@
           = yield
     = yield :pre_javascript
     = javascript_include_tag "statixite/application"
-    = javascript_include_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("controllers/#{params[:controller]}_#{params[:action]}.js")
+    
+    - if Rails.env.development? || Rails.env.test?
+      = javascript_include_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets.find_asset("controllers/#{params[:controller]}_#{params[:action]}.js")
+    - else
+      = javascript_include_tag "controllers/#{params[:controller]}_#{params[:action]}" if Rails.application.assets_manifest.files.map { |_,obj| obj }.map { |obj| obj["logical_path"] }.flatten.include?("controllers/#{params[:controller]}_#{params[:action]}.js")
     = render 'layouts/statixite/flash'
     = yield :inline_javascript
-    :javascript
-      $(document).ready(function() {
-        $.notify('Beta Alert! Use at your own risk.', {
-          autoHide: false,
-          position: 'bottom right',
-          className: 'warn'
-        });
-      });
