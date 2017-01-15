@@ -2,8 +2,6 @@
 
 Statixite is a management tool for static websites originally designed to work with {Jekyll}[https://jekyllrb.com], but with the hopes to support other static site generators. This project rocks and uses MIT-LICENSE and we always welcome contributors.  {Statixite}[https://statixite.com] is also available as a service.  The project is made so that developers can create there own management tool and setup custom deployment options, such as {Github Pages}[https://pages.github.com/], {Amazon S3}[https://aws.amazon.com/s3], or {Rackspace Cloud Files}[https://www.rackspace.com/en-us/cloud/files]
 
-=== Demo[https://app.statixite.com/users/sign_in?demo=true]
-
 === Requirements
 
 * Ruby on Rails
